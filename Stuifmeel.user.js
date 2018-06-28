@@ -4,12 +4,14 @@
 // @description Verander het woord 'zaad' in 'stuifmeel' op plekken waar dat waarschijnlijk passender is.
 // @version     1
 // @grant       none
+// @match        *://*/*
 // @exclude     http://*seed*
 // @exclude     http://*garden*
+// @exclude     http://*tuin*
 // @exclude     http://*zaad*
 // @exclude     http://*zad*
 // ==/UserScript==
-textNodes = document.evaluate('//text()', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+var textNodes = document.evaluate('//text()', document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
 var searchRE_1 = new RegExp('(zijn |mijn |je |uw |hun |donor|mannelijk )zaad', 'gi');
 var replace_1 = '$1stuifmeel';
 var searchRE_2 = new RegExp('zaad(donor|bal|leider)', 'gi');
